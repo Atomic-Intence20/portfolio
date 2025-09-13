@@ -4,5 +4,417 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gyandeep Mishra's Portfolio</title>
-    ...
+    <!-- Use a custom font that feels like a streaming service -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #141414;
+            color: #E5E5E5;
+        }
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+
+        .scrollbar-hide {
+            -ms-overflow-style: none;
+            scrollbar-width: none;
+        }
+
+        #ai-summary-container {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.5s ease-in-out;
+        }
+
+        #ai-summary-container.open {
+            max-height: 500px;
+        }
+    </style>
+</head>
+<body class="bg-[#141414] text-white">
+
+    <!-- Top Navigation Bar -->
+    <header class="fixed top-0 left-0 w-full z-50 p-6 flex justify-between items-center bg-gradient-to-b from-black to-transparent">
+        <div class="flex items-center space-x-8">
+            <h1 class="text-xl font-bold text-red-600">Gyandeep Mishra</h1>
+            <nav class="hidden md:flex space-x-6 text-sm font-semibold">
+                <a href="#" class="hover:text-gray-400 transition-colors">Home</a>
+                <a href="#projects" class="hover:text-gray-400 transition-colors">Projects</a>
+                <a href="#skills" class="hover:text-gray-400 transition-colors">Skills</a>
+                <a href="#about" class="hover:text-gray-400 transition-colors">About</a>
+            </nav>
+        </div>
+        <div class="flex items-center space-x-4">
+            <!-- LinkedIn Icon -->
+            <a href="https://www.linkedin.com/in/gyandeep-mishra-atomic-intense/" target="_blank" class="text-white hover:text-gray-400 transition-colors">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.769s.784-1.769 1.75-1.769 1.75.79 1.75 1.769-.783 1.769-1.75 1.769zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                </svg>
+            </a>
+            <!-- Instagram Icon -->
+            <a href="https://www.instagram.com/atomic_intense/" target="_blank" class="text-white hover:text-gray-400 transition-colors">
+                <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.163c3.204 0 3.584.013 4.858.071l-.001.002c1.23.056 2.08.261 2.654.492.6.242 1.05.578 1.5.992.443.414.779.864.992 1.5.231.573.436 1.423.492 2.654l.002.002c.058 1.275.071 1.656.071 4.858s-.013 3.584-.071 4.858l-.002.001c-.056 1.23-.261 2.08-.492 2.654-.242.6-.578 1.05-.992 1.5-.414.443-.864.779-1.5.992-.573.231-1.423.436-2.654.492l-.001.002c-1.275.058-1.656.071-4.858.071s-3.584-.013-4.858-.071l-.002-.001c-1.23-.056-2.08-.261-2.654-.492-.6-.242-1.05-.578-1.5-.992-.443-.414-.779-.864-.992-1.5-.231-.573-.436-1.423-.492-2.654l-.001-.002c-.058-1.275-.071-1.656-.071-4.858s.013-3.584.071-4.858l.002-.001c.056 1.23.261 2.08.492 2.654.242-.6.578-1.05.992-1.5.414-.443.864-.779 1.5-.992.573-.231 1.423-.436 2.654-.492l.001-.002c1.275-.058 1.656-.071 4.858-.071zm0-2.163c-3.264 0-3.668.014-4.945.071l-.003.001c-1.317.06-2.228.272-2.923.541-.71.276-1.29.697-1.874 1.282-.584.584-1.006 1.164-1.282 1.874-.269.695-.481 1.606-.541 2.923l-.001.003c-.057 1.277-.071 1.681-.071 4.945s.014 3.668.071 4.945l.001.003c.06 1.317.272 2.228.541 2.923.276.71.697 1.29 1.282 1.874.584.584 1.164 1.006 1.874 1.282.695.269 1.606.481 2.923.541l.003.001c1.277.057 1.681.071 4.945.071s3.668-.014 4.945-.071l.003-.001c1.317-.06 2.228-.272 2.923-.541.71-.276 1.29-.697 1.874-1.282.584-.584 1.164-1.006 1.282-1.874.269-.695.481-1.606.541-2.923l.001-.003c.057-1.277.071-1.681.071-4.945s-.014-3.668-.071-4.945l-.001-.003c-.06-1.317-.272-2.228-.541-2.923-.276-.71-.697-1.29-1.282-1.874-.584-.584-1.164-1.006-1.874-1.282-.695-.269-1.606-.481-2.923-.541l-.003-.001c-1.277-.057-1.681-.071-4.945-.071zm0 2.163c-.854 0-1.706.027-2.615.068-.908.041-1.794.12-2.578.257-.74.132-1.38.35-1.92.79-.54.439-.88 1.03-1.075 1.706-.178.618-.266 1.488-.309 2.518-.041.908-.068 1.761-.068 2.615s.027 1.706.068 2.615c.041.908.12 1.794.257 2.578.132.74.35 1.38.79 1.92.439.54 1.03 1.075 1.706 1.075.618.178 1.488.266 2.518.309.908.041 1.761.068 2.615.068s1.706-.027 2.615-.068c.908-.041 1.794-.12 2.578-.257.132-.74.35-1.38.79-1.92.439-.54-1.03-.88-1.706-1.075-.618-.178-1.488-.266-2.518-.309-.908-.041-1.761-.068-2.615-.068zm0 5.485c-1.696 0-3.075 1.379-3.075 3.075s1.379 3.075 3.075 3.075 3.075-1.379 3.075-3.075-1.379-3.075-3.075-3.075zm0 2.163c-.802 0-1.451.649-1.451 1.451s.649 1.451 1.451 1.451 1.451-.649 1.451-1.451-.649-1.451-1.451-1.451zm5.163-5.268c-.687 0-1.243-.556-1.243-1.243s.556-1.243 1.243-1.243c.687 0 1.243.556 1.243 1.243s-.556 1.243-1.243 1.243z"/>
+                </svg>
+            </a>
+        </div>
+    </header>
+
+    <main class="pt-24 px-6 md:px-12">
+
+        <!-- Featured Project Section -->
+        <div class="relative h-[60vh] md:h-[75vh] w-full rounded-2xl overflow-hidden shadow-2xl">
+            <img id="hero-image" src="" alt="Featured Project" class="absolute inset-0 w-full h-full object-cover transition-opacity duration-500 ease-in-out">
+            <div class="absolute inset-0 bg-gradient-to-t from-black to-transparent"></div>
+            <div class="absolute bottom-0 left-0 p-8 md:p-12 w-full md:w-2/3">
+                <p class="text-2xl md:text-5xl font-extrabold mb-4 drop-shadow-lg">Soil-moisture-and-fertility-analysis</p>
+                <p class="text-xs md:text-base text-gray-300 drop-shadow-lg mb-6 max-w-lg">
+                    Built an IoT-enabled camera system with Arduino and YOLOv8 to analyze 500+ soil images daily. Achieved 92% accuracy in 
+fertility detection and 88% in moisture classification, enabling optimized irrigation scheduling and reducing water usage by 
+20–25% for improved farming practices.
+                </p>
+                <div class="flex space-x-4">
+                    <a href="https://github.com/Atomic-Intence20/Soil-moisture-and-fertility-analysis" target="_blank" class="flex items-center px-4 py-2 md:px-6 md:py-3 bg-white text-black rounded-full font-bold text-sm md:text-base hover:bg-gray-200 transition-colors">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zM9.555 7.168A1 1 0 008 8v4a1 1 0 001.555.832l3-2a1 1 0 000-1.664l-3-2z" clip-rule="evenodd"></path>
+                        </svg>
+                        View on GitHub
+                    </a>
+                    <button id="featured-more-info-btn" class="flex items-center px-4 py-2 md:px-6 md:py-3 bg-gray-600 bg-opacity-70 text-white rounded-full font-bold text-sm md:text-base hover:bg-opacity-90 transition-colors">
+                        <svg class="w-5 h-5 md:w-6 md:h-6 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M11 6a3 3 0 11-6 0 3 3 0 016 0zM14 10a4 4 0 01-8 0v2a4 4 0 118 0v-2z"></path>
+                        </svg>
+                        More Info
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Projects Section (mimicking Netflix rows) -->
+        <section id="projects" class="mt-12">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 ml-2">My Projects</h2>
+            <div class="flex space-x-4 overflow-x-auto scrollbar-hide py-4 px-2 -mx-2">
+                <!-- Project Card 1: Drug Discovery and Management System -->
+                <div class="w-64 flex-shrink-0 cursor-pointer project-card" data-title="Drug Discovery and Management System" data-description="Developed a drug management platform using Python, Pandas, and TensorFlow to analyze 10,000+ compound datasets. Integrated predictive modeling improved drug prediction efficiency by 30% and reduced analysis time by 40%.">
+                    <div class="relative w-full h-40 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://placehold.co/600x400/22c55e/FFFFFF?text=Drug+Discovery" alt="Drug Discovery Project" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-4 opacity-0 hover:opacity-100 transition-opacity">
+                            <p class="font-bold text-sm md:text-base">Drug Discovery and Management System</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 2: Soil Moisture and Fertility Analysis -->
+                <div class="w-64 flex-shrink-0 cursor-pointer project-card" data-title="Soil Moisture and Fertility Analysis" data-description="Built an IoT-enabled camera system with Arduino and YOLOv8 to analyze 500+ soil images daily. Achieved 92% accuracy in fertility detection and 88% in moisture classification, enabling optimized irrigation scheduling.">
+                    <div class="relative w-full h-40 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://placehold.co/600x400/f59e0b/FFFFFF?text=Soil+Analysis" alt="Soil Analysis Project" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-4 opacity-0 hover:opacity-100 transition-opacity">
+                            <p class="font-bold text-sm md:text-base">Soil Moisture and Fertility Analysis</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 3: Face Recognition Attendance System -->
+                <div class="w-64 flex-shrink-0 cursor-pointer project-card" data-title="Face Recognition Attendance System" data-description="Developed an ESP32-based attendance management system using Python and OpenCV, capable of recognizing 100+ faces in under 2 seconds. The system achieved 95% accuracy across varied conditions.">
+                    <div class="relative w-full h-40 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://placehold.co/600x400/ef4444/FFFFFF?text=Face+Recognition" alt="Face Recognition Project" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-4 opacity-0 hover:opacity-100 transition-opacity">
+                            <p class="font-bold text-sm md:text-base">Face Recognition Attendance System</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 4: Predictive Analytics in Autism spectrum Disorder -->
+                <div class="w-64 flex-shrink-0 cursor-pointer project-card" data-title="Predictive Analytics in Autism spectrum Disorder" data-description="Designed a CNN-based predictive model with TensorFlow and Keras, trained on 5,000+ behavioral and clinical datasets. The system achieved 94% accuracy in early ASD prediction and reduced false positives by 15%.">
+                    <div class="relative w-full h-40 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://placehold.co/600x400/0e7490/FFFFFF?text=Autism+Prediction" alt="Predictive Analytics Project" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-4 opacity-0 hover:opacity-100 transition-opacity">
+                            <p class="font-bold text-sm md:text-base">Predictive Analytics in Autism spectrum Disorder</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Another Projects Section -->
+        <section id="more-projects" class="mt-8">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 ml-2">More of My Work</h2>
+            <div class="flex space-x-4 overflow-x-auto scrollbar-hide py-4 px-2 -mx-2">
+                <!-- Project Card 5: analog-audio-equiliser -->
+                <div class="w-64 flex-shrink-0 cursor-pointer project-card" data-title="Analog Audio Equalizer" data-description="An analog audio equalizer project that manipulates sound frequencies for a better audio experience.">
+                    <div class="relative w-full h-40 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://placehold.co/600x400/f87171/FFFFFF?text=Analog+Audio+Equalizer" alt="Analog Audio Equalizer Project" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-4 opacity-0 hover:opacity-100 transition-opacity">
+                            <p class="font-bold text-sm md:text-base">Analog Audio Equalizer</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Project Card 6: Encryption-and-Decryption -->
+                <div class="w-64 flex-shrink-0 cursor-pointer project-card" data-title="Encryption and Decryption" data-description="A project focused on implementing an encryption and decryption algorithm to secure data.">
+                    <div class="relative w-full h-40 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://placehold.co/600x400/9333ea/FFFFFF?text=Encryption" alt="Encryption and Decryption Project" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-4 opacity-0 hover:opacity-100 transition-opacity">
+                            <p class="font-bold text-sm md:text-base">Encryption and Decryption</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Skills Section -->
+        <section id="skills" class="mt-12">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 ml-2">My Skills</h2>
+            <div class="flex space-x-4 overflow-x-auto scrollbar-hide py-4 px-2 -mx-2">
+                <!-- Skill Card 1: Programming Languages -->
+                <div class="w-64 flex-shrink-0 cursor-pointer project-card" data-title="Programming Languages" data-description="Proficient in Python, Java, C, C++, and SQL, with a strong foundation in software development and problem-solving.">
+                    <div class="relative w-full h-40 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://placehold.co/600x400/facc15/000000?text=Programming" alt="Programming Languages Skill" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-4 opacity-0 hover:opacity-100 transition-opacity">
+                            <p class="font-bold text-sm md:text-base">Programming Languages</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill Card 2: Artificial Intelligence -->
+                <div class="w-64 flex-shrink-0 cursor-pointer project-card" data-title="Artificial Intelligence" data-description="Independently explored and applied skills in AI, Machine Learning, Deep Learning, Computer Vision, and IoT in practical projects.">
+                    <div class="relative w-full h-40 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://placehold.co/600x400/60a5fa/FFFFFF?text=AI+%26+ML" alt="AI/ML Skill" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-4 opacity-0 hover:opacity-100 transition-opacity">
+                            <p class="font-bold text-sm md:text-base">Artificial Intelligence & Machine Learning</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Skill Card 3: Tools & Technologies -->
+                <div class="w-64 flex-shrink-0 cursor-pointer project-card" data-title="Tools & Technologies" data-description="Experienced with Jupyter Notebook, Google Colab, MATLAB, Visual Studio Code, and Arduino IDE.">
+                    <div class="relative w-full h-40 rounded-lg overflow-hidden transition-transform transform hover:scale-105 duration-300">
+                        <img src="https://placehold.co/600x400/16a34a/FFFFFF?text=Tools" alt="Tools & Technologies Skill" class="absolute inset-0 w-full h-full object-cover">
+                        <div class="absolute inset-0 bg-black bg-opacity-50 flex items-end p-4 opacity-0 hover:opacity-100 transition-opacity">
+                            <p class="font-bold text-sm md:text-base">Tools & Technologies</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- About Me Section -->
+        <section id="about" class="mt-12 px-2 pb-12">
+            <h2 class="text-xl md:text-2xl font-bold mb-4 ml-2">About Me</h2>
+            <div class="flex flex-col md:flex-row items-center md:space-x-8 bg-gray-800 bg-opacity-50 p-6 rounded-lg shadow-xl">
+                <div>
+                    <p class="text-lg md:text-xl font-semibold text-gray-200">Hi, I'm Gyandeep Mishra</p>
+                    <p class="text-sm md:text-base text-gray-400 mt-2">
+                        I am an Electronics and Communication Engineering student with a strong foundation in programming and software development. Beyond academics, I have independently explored AI/ML, computer vision, and IoT, applying them in practical projects. With hands-on experience in Python, Java, C, C++, and SQL, I bring a blend of engineering knowledge and coding expertise, along with strong problem-solving skills and adaptability across IT domains.
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Modal for Project Details -->
+    <div id="project-modal" class="fixed inset-0 bg-black bg-opacity-80 z-[100] hidden items-center justify-center p-4">
+        <div class="bg-[#141414] rounded-lg shadow-2xl overflow-hidden max-w-2xl w-full">
+            <div class="relative">
+                <img id="modal-image" src="" alt="Project Image" class="w-full h-64 object-cover">
+                <button id="close-modal" class="absolute top-4 right-4 text-white text-2xl bg-black bg-opacity-50 rounded-full w-8 h-8 flex items-center justify-center font-bold hover:bg-opacity-80 transition-colors">
+                    &times;
+                </button>
+            </div>
+            <div class="p-6">
+                <h3 id="modal-title" class="text-2xl font-bold mb-2">Project Title</h3>
+                <p id="modal-description" class="text-sm text-gray-400 mb-4">Project Description goes here...</p>
+                <div class="flex space-x-4">
+                    <a id="source-code-link" href="#" target="_blank" class="flex items-center px-4 py-2 bg-gray-600 bg-opacity-70 text-white rounded-full font-bold text-sm hover:bg-opacity-90 transition-colors">
+                        <svg class="w-4 h-4 mr-2" fill="currentColor" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M10 3a1 1 0 00-.894.553L7.382 7.27a1 1 0 00-.737.568l-2.73 3.64A1 1 0 002 12h16a1 1 0 00-.895-1.479l-2.73-3.64a1 1 0 00-.737-.568L10.894 3.553A1 1 0 0010 3z" />
+                        </svg>
+                        Source Code
+                    </a>
+                </div>
+                <div class="mt-6 pt-4 border-t border-gray-700">
+                    <button id="ai-summary-button" class="flex items-center px-4 py-2 bg-purple-600 text-white rounded-full font-bold text-sm hover:bg-purple-700 transition-colors">
+                         ✨ Get an AI Summary
+                    </button>
+                    <div id="ai-summary-container" class="mt-4">
+                        <div id="ai-summary-loading" class="text-gray-400 hidden">
+                            <div class="flex items-center justify-center space-x-2">
+                                <svg class="animate-spin h-5 w-5 text-purple-400" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                                </svg>
+                                <span>Generating summary...</span>
+                            </div>
+                        </div>
+                        <p id="ai-summary-text" class="text-sm text-gray-300 whitespace-pre-wrap"></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const projectCards = document.querySelectorAll('.project-card');
+            const modal = document.getElementById('project-modal');
+            const closeModalBtn = document.getElementById('close-modal');
+            const modalTitle = document.getElementById('modal-title');
+            const modalDescription = document.getElementById('modal-description');
+            const modalImage = document.getElementById('modal-image');
+            const sourceCodeLink = document.getElementById('source-code-link');
+            const aiSummaryButton = document.getElementById('ai-summary-button');
+            const aiSummaryContainer = document.getElementById('ai-summary-container');
+            const aiSummaryText = document.getElementById('ai-summary-text');
+            const aiSummaryLoading = document.getElementById('ai-summary-loading');
+            const featuredMoreInfoBtn = document.getElementById('featured-more-info-btn');
+            const heroImage = document.getElementById('hero-image');
+
+            // Array of images to be randomly selected
+            const heroImages = [
+                'https://placehold.co/1920x1080/0e7490/FFFFFF?text=Improved+Farming+Practices',
+                'https://placehold.co/1920x1080/be123c/FFFFFF?text=Welcome'
+            ];
+            
+            // Function to set a random hero image on page load
+            const setRandomHeroImage = () => {
+                const randomIndex = Math.floor(Math.random() * heroImages.length);
+                heroImage.src = heroImages[randomIndex];
+            };
+
+            setRandomHeroImage(); // Set an image on initial load
+
+            const projectData = {
+                "Drug Discovery and Management System": {
+                    source: "https://github.com/Atomic-Intence20/Drug-Management" 
+                },
+                "Soil Moisture and Fertility Analysis": {
+                    source: "https://github.com/Atomic-Intence20/Soil-moisture-and-fertility-analysis",
+                    image: "https://placehold.co/600x400/f59e0b/FFFFFF?text=Soil+Analysis",
+                    description: "Built an IoT-enabled camera system with Arduino and YOLOv8 to analyze 500+ soil images daily. Achieved 92% accuracy in fertility detection and 88% in moisture classification, enabling optimized irrigation scheduling."
+                },
+                "Face Recognition Attendance System": {
+                    source: "https://github.com/Atomic-Intence20/Face-recognition-attendance-system" 
+                },
+                "Predictive Analytics in Autism spectrum Disorder": {
+                    source: "https://github.com/Atomic-Intence20/Autism-Prediction" 
+                },
+                "Analog Audio Equalizer": {
+                    source: "https://github.com/Atomic-Intence20/analog-audio-equiliser",
+                    description: "An analog audio equalizer project that manipulates sound frequencies for a better audio experience."
+                },
+                "Encryption and Decryption": {
+                    source: "https://github.com/Atomic-Intence20/Encryption-and-Decryption-using-RC4-Algorithm-",
+                    description: "A project focused on implementing an encryption and decryption algorithm to secure data."
+                },
+                "Programming Languages": {
+                    source: "#"
+                },
+                "Artificial Intelligence & Machine Learning": {
+                    source: "#"
+                },
+                "Tools & Technologies": {
+                    source: "#"
+                }
+            };
+            const skillTitles = ["Programming Languages", "Artificial Intelligence & Machine Learning", "Tools & Technologies"];
+
+            // Event listener for the "More Info" button on the featured project
+            featuredMoreInfoBtn.addEventListener('click', () => {
+                const title = "Soil Moisture and Fertility Analysis";
+                const data = projectData[title];
+
+                modalTitle.textContent = title;
+                modalDescription.textContent = data.description;
+                modalImage.src = data.image;
+                sourceCodeLink.style.display = 'flex';
+                sourceCodeLink.href = data.source;
+
+                aiSummaryButton.setAttribute('data-project-title', title);
+                aiSummaryButton.setAttribute('data-project-description', data.description);
+                
+                aiSummaryText.textContent = '';
+                aiSummaryContainer.classList.remove('open');
+                aiSummaryLoading.classList.add('hidden');
+
+                modal.style.display = 'flex';
+            });
+
+            projectCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const title = card.getAttribute('data-title');
+                    const description = card.getAttribute('data-description');
+                    const imageSrc = card.querySelector('img').src;
+                    const data = projectData[title] || { source: '#' };
+
+                    modalTitle.textContent = title;
+                    modalDescription.textContent = description;
+                    modalImage.src = imageSrc;
+                    
+                    if (skillTitles.includes(title)) {
+                        sourceCodeLink.style.display = 'none';
+                    } else {
+                        sourceCodeLink.style.display = 'flex';
+                        sourceCodeLink.href = data.source;
+                    }
+
+                    aiSummaryButton.setAttribute('data-project-title', title);
+                    aiSummaryButton.setAttribute('data-project-description', description);
+
+                    aiSummaryText.textContent = '';
+                    aiSummaryContainer.classList.remove('open');
+                    aiSummaryLoading.classList.add('hidden');
+
+                    modal.style.display = 'flex';
+                });
+            });
+
+            closeModalBtn.addEventListener('click', () => {
+                modal.style.display = 'none';
+            });
+
+            aiSummaryButton.addEventListener('click', async () => {
+                const title = aiSummaryButton.getAttribute('data-project-title');
+                const description = aiSummaryButton.getAttribute('data-project-description');
+
+                aiSummaryLoading.classList.remove('hidden');
+                aiSummaryText.textContent = '';
+                aiSummaryContainer.classList.add('open');
+                
+                const userQuery = `Generate a detailed, single-paragraph explanation of the project titled '${title}'. The project's primary description is '${description}'. Focus on the technical details, key challenges, and results. Write it in a professional, concise, and engaging tone suitable for a portfolio.`;
+                
+                const payload = {
+                    contents: [{ parts: [{ text: userQuery }] }],
+                };
+                const apiKey = ""
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-preview-05-20:generateContent?key=${apiKey}`;
+
+                try {
+                    const response = await fetch(apiUrl, {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(payload)
+                    });
+
+                    const result = await response.json();
+                    const generatedText = result?.candidates?.[0]?.content?.parts?.[0]?.text || "Failed to generate summary.";
+                    aiSummaryText.textContent = generatedText;
+                } catch (error) {
+                    console.error('API Error:', error);
+                    aiSummaryText.textContent = "Error generating summary. Please try again.";
+                } finally {
+                    aiSummaryLoading.classList.add('hidden');
+                }
+            });
+
+            window.addEventListener('click', (event) => {
+                if (event.target === modal) {
+                    modal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+</body>
 </html>
