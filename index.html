@@ -1,0 +1,420 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-content">
+            <a href="#" class="logo">Portfolio</a>
+            <div class="nav-links">
+                <a href="#about">About</a>
+                <a href="#experience">Experience</a>
+                <a href="#projects">Projects</a>
+                <a href="#skills">Skills</a>
+                <a href="#contact">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <main>
+        <section id="hero" class="hero-section">
+            <div class="hero-content">
+                <div class="profile-container">
+                    <img src="images/profile.png" alt="Gyandeep Mishra" class="profile-img">
+                </div>
+                <h1 class="scroll-reveal">Hello, I'm <span class="highlight">Gyandeep Mishra</span>.</h1>
+                <p class="subtitle scroll-reveal delay-1">Electronics & Communication Engineering Student<br>AI/ML
+                    Enthusiast</p>
+                <p style="margin-top: 20px; color: var(--text-secondary);" class="scroll-reveal delay-2">
+                    gm9662@srmist.edu.in | Based in Lucknow, India</p>
+            </div>
+        </section>
+
+        <section id="about" class="about-section">
+            <div class="container">
+                <h2 class="section-title scroll-reveal">Summary</h2>
+                <p class="large-text scroll-text">
+                    I am an <span class="highlight-text">Electronics and Communication Engineering student</span> with a
+                    strong foundation in programming and software development.
+                    Beyond academics, I have independently explored <span class="highlight-text">AI/ML, computer vision,
+                        and IoT</span>, applying them in practical projects.
+                    I bring a blend of engineering knowledge and <span class="highlight-text">coding expertise</span>,
+                    along with strong problem-solving skills.
+                </p>
+            </div>
+        </section>
+
+        <section id="experience" class="experience-section">
+            <div class="container">
+                <h2 class="section-title scroll-reveal">Experience</h2>
+                <div class="timeline">
+                    <div class="timeline-item scroll-reveal delay-1">
+                        <div class="timeline-date">Jul 2025 - Aug 2025</div>
+                        <div class="timeline-content">
+                            <h3>Deloitte</h3>
+                            <p>Data Analytics Intern (Remote)</p>
+                            <p class="description">Completed Deloitte Data Analytics Job Simulation. Applied business
+                                analytics to case studies and gained insights into practical consulting workflows.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item scroll-reveal delay-2">
+                        <div class="timeline-date">Jul 2024 - Sept 2024</div>
+                        <div class="timeline-content">
+                            <h3>Altair</h3>
+                            <p>Engineering Intern (Remote)</p>
+                            <p class="description">Learned simulation and engineering problem-solving methods. Developed
+                                foundational knowledge in software tools for real-world engineering applications.</p>
+                        </div>
+                    </div>
+                    <div class="timeline-item scroll-reveal delay-3">
+                        <div class="timeline-date">Jan 2024 - Mar 2024</div>
+                        <div class="timeline-content">
+                            <h3>AWS Academy</h3>
+                            <p>AI/ML Intern (Virtual)</p>
+                            <p class="description">Built and deployed ML models on cloud-hosted platforms. Strengthened
+                                AI/ML problem-solving skills through a 10-week internship supported by AICTE.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="projects" class="projects-section">
+            <div class="container">
+                <h2 class="section-title scroll-reveal">Projects</h2>
+                <div class="bento-grid">
+                    <div class="bento-item large scroll-reveal">
+                        <div class="project-content">
+                            <h3>Soil Moisture & Fertility Analysis</h3>
+                            <p>IoT-enabled system with Arduino and YOLOv8 analyzing 500+ soil images daily. Achieved 92%
+                                fertility detection and 88% moisture classification.</p>
+                            <div class="project-tags">
+                                <span class="tag">YOLOv8</span>
+                                <span class="tag">Arduino</span>
+                                <span class="tag">Flask</span>
+                                <span class="tag">Python</span>
+                            </div>
+                            <!-- Hidden Details -->
+                            <div class="hidden-details" style="display: none;">
+                                <p><strong>The Soil Moisture and Fertility Analysis with Camera Integration</strong>
+                                    project is a smart agriculture solution developed with the aim of improving farmers’
+                                    conditions through the use of modern technology.</p>
+
+                                <h4>Motivation</h4>
+                                <p>Many farmers still rely on traditional methods and personal experience to judge soil
+                                    quality and moisture levels, which often leads to over-irrigation, under-irrigation,
+                                    low crop yield, and unnecessary fertilizer usage. The motivation behind this project
+                                    was to provide farmers with a simple, accurate, and affordable technological tool
+                                    that can help them make better decisions regarding watering and soil treatment,
+                                    ultimately increasing productivity while reducing resource wastage.</p>
+
+                                <h4>How It Works</h4>
+                                <p>The system combines IoT hardware, computer vision, and machine learning to analyze
+                                    soil conditions in real time. An Arduino-based setup is used along with a camera
+                                    module to capture soil images directly from the field. These images are then
+                                    processed using YOLOv8-based deep learning models, which analyze visual patterns,
+                                    texture, and color variations in the soil to determine its fertility level and
+                                    moisture condition.</p>
+
+                                <h4>Key Metrics</h4>
+                                <p>On a daily basis, the system is capable of analyzing 500+ soil images, providing
+                                    consistent and scalable monitoring. The machine learning model achieved <strong>92%
+                                        accuracy</strong> in soil fertility detection and <strong>88% accuracy</strong>
+                                    in moisture classification, ensuring reliable results for real-world agricultural
+                                    use.</p>
+
+                                <h4>Farmer-Friendly Interface</h4>
+                                <p>To make the system farmer-friendly, the processed results are displayed through a
+                                    web-based interface developed using Flask, HTML, and CSS. This interface presents
+                                    clear insights such as:</p>
+                                <ul>
+                                    <li>Current soil moisture level</li>
+                                    <li>Soil fertility status</li>
+                                    <li>Recommendations for irrigation and fertilizer usage</li>
+                                </ul>
+
+                                <h4>Impact</h4>
+                                <p>By using accurate data instead of guesswork, farmers can avoid excessive watering and
+                                    fertilizer application. As a result, the system helps in reducing water usage by
+                                    20–25%, lowering operational costs and promoting sustainable farming practices.</p>
+
+                                <p>Overall, this project demonstrates how IoT and AI-driven solutions can empower
+                                    farmers by providing them with actionable insights, improving crop yield, conserving
+                                    natural resources, and supporting long-term agricultural sustainability.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-item medium scroll-reveal delay-1">
+                        <div class="project-content">
+                            <h3>Predictive Analytics in Autism</h3>
+                            <p>Deep Learning model designed with TensorFlow & Keras. Achieved 94% prediction accuracy
+                                for early diagnosis.</p>
+                            <div class="project-tags">
+                                <span class="tag">Deep Learning</span>
+                                <span class="tag">TensorFlow</span>
+                                <span class="tag">CNN</span>
+                            </div>
+                            <!-- Hidden Details -->
+                            <div class="hidden-details" style="display: none;">
+                                <p><strong>The Predictive Analytics in Autism Spectrum Disorder (ASD)</strong> project
+                                    focuses on using artificial intelligence and deep learning techniques to support the
+                                    early and accurate diagnosis of autism.</p>
+
+                                <h4>Motivation & Problem</h4>
+                                <p>Autism Spectrum Disorder is a neurodevelopmental condition that affects
+                                    communication, behavior, and social interaction. Early diagnosis plays a critical
+                                    role in enabling timely intervention. However, traditional diagnosis methods largely
+                                    depend on behavioral observations and expert judgment, which can be time-consuming,
+                                    subjective, and prone to inconsistencies, often leading to delayed diagnosis or
+                                    false positives.</p>
+
+                                <h4>The Solution</h4>
+                                <p>The motivation behind this project was to design a data-driven and objective
+                                    diagnostic support system that can assist healthcare professionals by improving
+                                    diagnostic accuracy and reducing uncertainty. By leveraging deep learning models,
+                                    the system aims to identify autism-related patterns at an early stage, making the
+                                    diagnostic process faster and more reliable.</p>
+
+                                <h4>Technical Implementation</h4>
+                                <p>In this project, a <strong>Convolutional Neural Network (CNN)</strong> was developed
+                                    using <strong>TensorFlow</strong> and <strong>Keras</strong>. The model was trained
+                                    on 5,000+ datasets, which include relevant features associated with Autism Spectrum
+                                    Disorder. CNNs are particularly effective in identifying complex and non-linear
+                                    patterns in data, making them well-suited for medical prediction tasks.</p>
+
+                                <h4>Results & Impact</h4>
+                                <p>After training and evaluation, the model achieved a <strong>prediction accuracy of
+                                        94%</strong>, demonstrating strong diagnostic capability. Additionally, the
+                                    system successfully <strong>reduced false positive rates by 15%</strong>, which is
+                                    critical in avoiding unnecessary stress, misdiagnosis, and incorrect treatment
+                                    plans.</p>
+
+                                <p>By improving diagnostic precision, this project contributes to early autism
+                                    detection, enabling healthcare professionals and caregivers to initiate timely
+                                    intervention strategies. The system is intended to act as a decision-support tool,
+                                    assisting clinicians rather than replacing professional medical judgment.</p>
+
+                                <p>Overall, this project highlights the potential of AI-driven predictive analytics in
+                                    healthcare, specifically in neurodevelopmental disorder diagnosis, enhancing
+                                    accuracy, consistency, and efficiency in medical decision-making.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-item medium scroll-reveal delay-2">
+                        <div class="project-content">
+                            <h3>Face Recognition System</h3>
+                            <p>Attendance system using OpenCV recognizing 100+ faces in <2s with 95% accuracy.</p>
+                                    <div class="project-tags">
+                                        <span class="tag">OpenCV</span>
+                                        <span class="tag">Python</span>
+                                        <span class="tag">Pandas</span>
+                                    </div>
+                                    <!-- Hidden Details -->
+                                    <div class="hidden-details" style="display: none;">
+                                        <p><strong>The Face Recognition Attendance System using ESP32</strong> is an
+                                            automated attendance management solution designed to replace traditional
+                                            manual and biometric attendance methods, which are often time-consuming,
+                                            error-prone, and inconvenient.</p>
+
+                                        <h4>Motivation</h4>
+                                        <p>In educational institutions and organizations, taking attendance manually
+                                            consumes valuable time and can lead to proxy attendance or incorrect record
+                                            keeping. The motivation behind this project was to develop a contactless,
+                                            fast, and accurate attendance system that leverages computer vision and
+                                            embedded systems. Especially after the COVID-19 period, the need for
+                                            touch-free and automated systems became more important for hygiene,
+                                            efficiency, and scalability.</p>
+
+                                        <h4>How It Works</h4>
+                                        <p>The system uses an <strong>ESP32 camera module</strong> to capture facial
+                                            images of individuals in real time. These images are processed using
+                                            <strong>Python</strong> and <strong>OpenCV</strong>, where facial features
+                                            are detected and compared against a pre-stored database using the
+                                            <strong>face_recognition</strong> library. Once a face is successfully
+                                            recognized, the system automatically marks the attendance of the individual.
+                                        </p>
+
+                                        <h4>Performance & Tech Stack</h4>
+                                        <p>The system is capable of recognizing <strong>100+ faces in under 2
+                                                seconds</strong>, making it suitable for real-time classroom or office
+                                            environments. Attendance data is stored and managed efficiently using Pandas
+                                            and NumPy, enabling structured record-keeping and easy data analysis.</p>
+
+                                        <h4>Impact</h4>
+                                        <p>During evaluation, the system achieved an <strong>overall recognition
+                                                accuracy of 95%</strong>, ensuring reliable performance in real-world
+                                            conditions. By automating the attendance process, the system saves
+                                            approximately <strong>15 minutes per session</strong>, significantly
+                                            improving productivity for instructors and administrators.</p>
+
+                                        <p>This project demonstrates how embedded hardware (ESP32) combined with
+                                            computer vision and machine learning techniques can solve everyday
+                                            administrative problems, highlighting the practical application of AI in
+                                            building smart, efficient, and scalable systems.</p>
+                                    </div>
+                        </div>
+                    </div>
+                    <div class="bento-item small scroll-reveal delay-3">
+                        <div class="project-content">
+                            <h3>Drug Discovery Platform</h3>
+                            <p>ML platform analyzing 10,000+ compound datasets. Improved efficiency by 30%.</p>
+                            <div class="project-tags">
+                                <span class="tag">ML</span>
+                                <span class="tag">Streamlit</span>
+                            </div>
+                            <!-- Hidden Details -->
+                            <div class="hidden-details" style="display: none;">
+                                <p><strong>The Drug Discovery and Management System</strong> is a web-based healthcare
+                                    platform developed to address two major challenges in the pharmaceutical domain:
+                                    medicine supply chain management and efficient drug discovery and accessibility.</p>
+
+                                <h4>The Problem</h4>
+                                <p>The idea for this project originated during the COVID-19 pandemic (2020), when
+                                    governments and healthcare authorities faced serious difficulties in tracking
+                                    medicine manufacturing, distribution, and availability. Despite sufficient
+                                    production, medicines often failed to reach the right places at the right time due
+                                    to the absence of a centralized monitoring system. This resulted in shortages, black
+                                    marketing, panic buying, and lack of transparency.</p>
+
+                                <h4>The Solution</h4>
+                                <p>To address this issue, we designed a centralized digital platform that allows
+                                    medicines to be tracked end-to-end, starting from the manufacturer, moving through
+                                    retailers, and finally reaching local medical shops where customers can easily
+                                    purchase them. This enables better visibility, accountability, and control over the
+                                    pharmaceutical supply chain.</p>
+
+                                <h4>Drug Discovery & Analysis</h4>
+                                <p>In addition to management, the project also focuses on the drug discovery and search
+                                    process. Traditional drug analysis and discovery methods are time-consuming and
+                                    computationally expensive. To overcome this, we applied machine learning techniques
+                                    on a dataset of 10,000+ drug compounds to speed up analysis and improve prediction
+                                    efficiency. As a result, the system reduces drug analysis time by 40% and improves
+                                    prediction efficiency by 30%, significantly accelerating the discovery process.</p>
+
+                                <h4>Intelligent Drug Search</h4>
+                                <p>A key feature of the system is its intelligent drug search functionality. When a user
+                                    searches for a medicine (for example, a branded drug like Dolo), the system not only
+                                    checks its availability in nearby locations but also automatically suggests:</p>
+                                <ul>
+                                    <li>Alternative branded medicines with the same composition</li>
+                                    <li>Generic medicines that are safe, approved, and more affordable</li>
+                                </ul>
+                                <p>This feature is especially useful during shortages, as it reduces dependency on a
+                                    single brand and promotes awareness of cost-effective generic options.</p>
+
+                                <h4>Tech Stack</h4>
+                                <p>The entire system is implemented using <strong>Python</strong>, with data processing
+                                    handled by <strong>Pandas</strong> and <strong>NumPy</strong>, machine learning
+                                    models developed using <strong>TensorFlow</strong>, and a user-friendly web
+                                    interface built using <strong>Streamlit</strong>.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="skills-section">
+            <div class="container">
+                <h2 class="section-title scroll-reveal">Technical Skills</h2>
+                <div class="bento-grid">
+                    <div class="bento-item scroll-reveal delay-4">
+                        <div class="project-content">
+                            <h3>Programming Languages</h3>
+                            <div class="project-tags" style="margin-top: 15px;">
+                                <span class="tag">Python</span>
+                                <span class="tag">Java</span>
+                                <span class="tag">C</span>
+                                <span class="tag">C++</span>
+                                <span class="tag">SQL</span>
+                                <span class="tag">Linux</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-item scroll-reveal delay-5">
+                        <div class="project-content">
+                            <h3>Areas of Interest</h3>
+                            <div class="project-tags" style="margin-top: 15px;">
+                                <span class="tag">AI</span>
+                                <span class="tag">Machine Learning</span>
+                                <span class="tag">Deep Learning</span>
+                                <span class="tag">Data Science</span>
+                                <span class="tag">NLP</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bento-item scroll-reveal delay-6">
+                        <div class="project-content">
+                            <h3>Tools & Technologies</h3>
+                            <div class="project-tags" style="margin-top: 15px;">
+                                <span class="tag">Jupyter</span>
+                                <span class="tag">Colab</span>
+                                <span class="tag">MATLAB</span>
+                                <span class="tag">VS Code</span>
+                                <span class="tag">Arduino IDE</span>
+                                <span class="tag">Flask</span>
+                                <span class="tag">Streamlit</span>
+                                <span class="tag">MS Office</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Detail Modal -->
+        <div id="project-modal" class="modal">
+            <div class="modal-content">
+                <span class="close-modal">&times;</span>
+                <h2 id="modal-title">Project Title</h2>
+                <div id="modal-tags" class="project-tags"></div>
+                <div id="modal-body">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+        </div>
+
+        <section id="contact" class="contact-section">
+            <div class="container">
+                <h2 class="section-title scroll-reveal">Get in Touch</h2>
+                <p class="contact-tagline scroll-reveal delay-1">Let’s connect and build impactful, real-world solutions
+                    together.</p>
+                <div class="contact-grid">
+                    <a href="https://www.linkedin.com/in/gyandeep-mishra-atomic-intense/" target="_blank"
+                        class="bento-item contact-card scroll-reveal delay-1">
+                        <div class="contact-icon">LinkedIn</div>
+                        <h3>Gyandeep Mishra</h3>
+                        <p>Let's connect professionally</p>
+                    </a>
+                    <a href="mailto:gyanmishra1020@gmail.com" class="bento-item contact-card scroll-reveal delay-2">
+                        <div class="contact-icon">Email</div>
+                        <h3>gyanmishra1020@gmail.com</h3>
+                        <p>Personal Inquiry</p>
+                    </a>
+                    <a href="mailto:gm9662@srmist.edu.in" class="bento-item contact-card scroll-reveal delay-3">
+                        <div class="contact-icon">University</div>
+                        <h3>gm9662@srmist.edu.in</h3>
+                        <p>Academic Inquiry</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer">
+            <p>&copy; 2024 Gyandeep Mishra. All rights reserved.</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+
+</html>
